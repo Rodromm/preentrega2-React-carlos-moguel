@@ -1,5 +1,6 @@
-body {
+* {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +11,211 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App{
+  max-width: 1550px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  box-shadow: 0 2px 6px orange;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/*header*/
+
+header {
+  width: 97%;
+  min-height: 100px;
+  max-width: 1530px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: fixed;
+  box-sizing: border-box;
+  background-color: rgb(246, 255, 0);
+  box-shadow: 0 5px 10px rgb(0, 0, 0);
+
+}
+
+header ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+header ul li {
+  padding: 0 1rem;
+}
+
+header ul li a {
+  font-weight: bold;
+}
+
+header .cart {
+  position: relative;
+  cursor: pointer;
+}
+
+header .cart box-icon {
+  width: 45px;
+  height: 45px;
+}
+
+header .cart span {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: rgb(209, 4, 4);
+}
+
+/*inicio*/
+
+.inicio {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 10rem;
+}
+
+.inicio h1 {
+  font-size: 2.5rem;
+  color: rgb(255, 0, 0);
+}
+
+.inicio img {
+  width: 100%;
+}
+/*fin inicio*/
+a {
+  color: black;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover {
+  color: red;
+}
+
+li {
+  list-style: none;
+}
+
+/*productos*/
+.title{
+  font-size: 2.4rem;
+  padding: 10rem 0 0 0;
+  color: red;
+}
+
+.productos {
+  padding: 5rem 1rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 3rem 2rem;
+  box-sizing: border-box;
+}
+
+.producto {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 10px 10px 2px rgba(246, 108, 108, 0.2);
+  border: 6px solid transparent;
+  border-radius: 39px; 
+}
+
+.producto:hover{
+  border: 4px solid rgba(246, 108, 108, 0.201);
+}
+
+.producto_img img {
+  width: 210px;
+}
+
+.producto_footer{
+  padding: 1rem;
+}
+
+.producto_footer h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.producto_footer p {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.595);
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.producto_footer .price {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.646);
+}
+
+.producto .button {
+  width: 100%;
+  height: 45px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem 3rem;
+  padding: 0 1rem;
+  margin: 1rem;
+}
+
+.button .btn {
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 35px;
+}
+
+.button button {
+  background-color: rgb(15, 15, 249);
+  max-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 800;
+}
+
+.button div {
+  background-color: rgb(66, 98, 202);
+  display: grid;
+  text-align: center;
+  align-items: center;
+  margin-left: -2rem;
+  border-radius: 35px;
+}
+
+.button div a {
+  color: white;
+  font-weight: 800;
+}
+/*MEDIAQUERIES*/
+/*mayor a 600 no aplica */
+@media only screen and (max-width: 600px) {
+  header ul {
+    display: none;
+  }
 }
