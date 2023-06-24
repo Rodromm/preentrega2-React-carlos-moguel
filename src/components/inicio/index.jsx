@@ -1,5 +1,5 @@
 import React from "react";
-import Portada from "../img/lodgefenix.jpg";
+import Portada from "../../img/lodgefenix.jpg";
 import { Link } from "react-router-dom";
 
 export const Inicio = () => {

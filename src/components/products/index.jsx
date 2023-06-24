@@ -13,8 +13,8 @@ export const ListProducts = () => {
       <h1 className="title"> Productos Masonicos </h1>
       <div className="productos">
       {
-        productos.map(producto => (
-          <ProductoItem key={producto.id}
+        productos.map((producto) => (
+          <ProductoItem 
           
           id={producto.id}
           title={producto.title}
