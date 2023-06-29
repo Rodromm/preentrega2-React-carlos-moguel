@@ -6,6 +6,7 @@ export const Carrito = () => {
   const value = useContext(DataContext);
   const [menu, setMenu] = value.menu;
   const [carrito, setCarrito] = value.carrito;
+  const [total] = value.total;
 
   const tooglefalse = () => {
     setMenu(false);
@@ -28,7 +29,7 @@ export const Carrito = () => {
       if(item.id === id){
         item.cantidad +=1;
       }
-      setCarrito([carrito])
+      setCarrito([...carrito])
     })
   }
 
@@ -52,8 +53,14 @@ export const Carrito = () => {
         </div>
         <h2>Su Carrito</h2>
         <div className="centerCarrito">
-          {carrito.map((producto) => (
-            <div className="itemCarrito">
+          {
+          
+          carrito.length === 0 ? <h2 style={{
+            textAlign: " center", fontSize: "3rem"
+          }} >está vacio</h2> : <>
+          {
+          carrito.map((producto) => (
+            <div className="itemCarrito" key={producto.id}>
               <img src={producto.image} alt="" />
               <div>
                 <h3>{producto.title}</h3>
@@ -62,16 +69,18 @@ export const Carrito = () => {
               <div>
                 <box-icon name="up-arrow" type="solid" onClick={() => suma(producto.id)}></box-icon>
                 <p className="cantidad">{producto.cantidad}</p>
-                <box-icon name="down-arrow" type="solid"></box-icon>
+                <box-icon name="down-arrow" type="solid" onClick={() => resta(producto.id)}></box-icon>
               </div>
               <div className="removeItem" onClick={() => removeProducto(producto.id)}>
                 <box-icon name="trash" type="solid"></box-icon>
               </div>
             </div>
           ))}
+          </>
+          }
         </div>
         <div className="footerCarrito">
-          <h3>Total: $15000</h3>
+          <h3>Total:{total}</h3>
           <button className="btn">Pagar</button>
         </div>
       </div>
